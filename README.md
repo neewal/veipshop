@@ -1,4 +1,4 @@
 # veipshop
-telegram bot veipshop/n
-Auther 'Neewal'
-Go to sleep)
+telegram bot veipshop.
+Auther 'Neewal'.
+Go to sleep boy)
