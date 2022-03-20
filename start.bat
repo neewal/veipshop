@@ -1,3 +1,2 @@
-
-python3 bot.py
+python bot.py
 Pause
