@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import telebot
 import config
 import asyncio
@@ -28,7 +30,7 @@ def callback_inline(call):
         if call.message:
         	################################ MENU #######################################
             if call.data == 'katalog':
-                bot.send_message(call.message.chat.id, '⚡️Прайс⚡️\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=katalog)
+                bot.send_message(call.message.chat.id, '⚡️Прайс⚡️\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=katalog)
                 print('KATALOG отправилось!')
             elif call.data == 'prochee':
                 bot.send_message(call.message.chat.id, 'По вопросам и ошибкам бота пишите сюда: @neewal', reply_markup=prochee)
@@ -38,7 +40,7 @@ def callback_inline(call):
 
             ############################### KATALOG #####################################
             elif call.data == 'odnorazki':
-                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
+                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
                 print('ODNORAZKI отправилось!')
             elif call.data == 'pod':
                 bot.send_message(call.message.chat.id, 'Это пока что не доступно:)', reply_markup=pod, parse_mode="html")
@@ -56,7 +58,7 @@ def callback_inline(call):
 
             ############################## ODNORAZKI ####################################
             elif call.data == 'exit2':
-            	bot.send_message(call.message.chat.id, '⚡️Прайс⚡️\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=katalog, parse_mode="html")
+            	bot.send_message(call.message.chat.id, '⚡️Прайс⚡️\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=katalog, parse_mode="html")
             elif call.data == 'izi':
                 bot.send_message(call.message.chat.id, '<b>Вкусы:\n\n🍈Дыня🍈\n🍓Клубника, арбуз🍉\n🍏Яблоко, банан🍌\n🍓Клубника🍓\n🍋Лайм, махито🍸\n🍹Розовый лимонад🍹\n🍇Чирника🍇\n🍋Цитрус🍋\n🍐Гуава, арбуз🍉\n🍉Манга, лёд🧊\n☕️Молочный чай☕️\n🍦Ванильное мороженое🍦\n🍈Микс вкусов🍓\n\nПо наличию обращаться: @My_goodness00</b>', reply_markup=izi, parse_mode="html")
                 print('IZI отправилось!')
@@ -97,21 +99,21 @@ def callback_inline(call):
 
             ############################## POD ######################################
             elif call.data == 'exit5':
-            	bot.send_message(call.message.chat.id, '⚡️Прайс⚡️\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=katalog, parse_mode="html")
+            	bot.send_message(call.message.chat.id, '⚡️Прайс⚡️\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=katalog, parse_mode="html")
             ############################## POD ######################################
 
 
 
             ############################## JIJA ######################################
             elif call.data == 'exit6':
-            	bot.send_message(call.message.chat.id, '⚡️Прайс⚡️\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=katalog, parse_mode="html")
+            	bot.send_message(call.message.chat.id, '⚡️Прайс⚡️\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=katalog, parse_mode="html")
             ############################## JIJA ######################################
 
 
 
             ############################## ISPARIKI ######################################
             elif call.data == 'exit7':
-            	bot.send_message(call.message.chat.id, '⚡️Прайс⚡️\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=katalog, parse_mode="html")
+            	bot.send_message(call.message.chat.id, '⚡️Прайс⚡️\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=katalog, parse_mode="html")
             ############################## ISPARIKI ######################################
 
 
@@ -119,63 +121,63 @@ def callback_inline(call):
             #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_ MARKUP ODNORAZKI #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#
             ############################## IZI ###########################################
             elif call.data == 'exit8':
-                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
+                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
             ############################## IZI ###########################################
 
 
 
             ############################## ElfBar ###########################################
             elif call.data == 'exit9':
-                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
+                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
             ############################## ElfBar ###########################################
 
 
 
             ############################## HQD1 ###########################################
             elif call.data == 'exit10':
-                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
+                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
             ############################## HQD1 ###########################################
 
 
 
             ############################## TOOMI ###########################################
             elif call.data == 'exit11':
-                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
+                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
             ############################## TOOMI ###########################################
 
 
 
             ############################## DORMI1 ###########################################
             elif call.data == 'exit12':
-                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
+                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
             ############################## DORMI1 ###########################################
 
 
 
             ############################## HQD2 ###########################################
             elif call.data == 'exit13':
-                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
+                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
             ############################## HQD2 ###########################################
 
 
 
             ############################## DORMI2 ###########################################
             elif call.data == 'exit14':
-                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
+                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
             ############################## DORMI2 ###########################################
 
 
 
             ############################## SKYMOON ###########################################
             elif call.data == 'exit15':
-                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
+                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
             ############################## SKYMOON ###########################################
 
 
 
             ############################## CITY ###########################################
             elif call.data == 'exit16':
-                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
+                bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
             ############################## CITY ###########################################
 
             bot.edit_message_reply_markup(call.message.chat.id, call.message.message_id)
