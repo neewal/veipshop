@@ -46,7 +46,7 @@ def callback_inline(call):
                 bot.send_message(call.message.chat.id, 'Это пока что не доступно:)', reply_markup=pod, parse_mode="html")
                 print('POD отправилось!')
             elif call.data == 'jija':
-                bot.send_message(call.message.chat.id, 'Это пока что не доступно:)', reply_markup=jija, parse_mode="html")
+                bot.send_message(call.message.chat.id, '🔥Каталог Жиж🔥\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=jija, parse_mode="html")
                 print('JIJA отправилось!')
             elif call.data == 'ispariki':
                 bot.send_message(call.message.chat.id, 'Это пока что не доступно:)', reply_markup=ispariki, parse_mode="html")
@@ -105,6 +105,10 @@ def callback_inline(call):
 
 
             ############################## JIJA ######################################
+            elif call.data == 'brusko':
+                bot.send_message(call.message.chat.id, '<b>Вкусы:\n\n-ментол\n-англиская ириска\n-виноградные леденцы\n-творожный десерт с кусочками банана\n-грейпфруктовый сок с ягодами\n-фруктовое драже\n-банановое суфле\n-ванильный табак\n-кокосовый десерт\n-мелисса с мятой\n\nПо наличию обращаться: @My_goodness00</b>', reply_markup=brusko, parse_mode="html")
+            elif call.data == 'boshki':
+                bot.send_message(call.message.chat.id, '⚡️Прайс⚡️\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=boshki, parse_mode="html")
             elif call.data == 'exit6':
                 bot.send_message(call.message.chat.id, '⚡️Прайс⚡️\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=katalog, parse_mode="html")
             ############################## JIJA ######################################
@@ -180,6 +184,22 @@ def callback_inline(call):
                 bot.send_message(call.message.chat.id, '🔥Каталог Одноразок🔥\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=odnorazki, parse_mode="html")
             ############################## CITY ###########################################
 
+            #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_ MARKUP ODNORAZKI #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#
+
+            #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_ MARKUP JIJA #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#
+
+            ############################## BRUSKO ########################################
+            elif call.data == 'exit17':
+                bot.send_message(call.message.chat.id, '🔥Каталог Жиж🔥\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=jija, parse_mode="html")
+            ############################## BRUSKO ########################################
+
+            ############################## BOSHKI ########################################
+            elif call.data == 'exit18':
+                bot.send_message(call.message.chat.id, '🔥Каталог Жиж🔥\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=jija, parse_mode="html")
+            ############################## BOSHKI ########################################
+
+            #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_ MARKUP JIJA #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#
+
             bot.edit_message_reply_markup(call.message.chat.id, call.message.message_id)
             bot.delete_message(call.message.chat.id, call.message.message_id)
     except Exception as e:
@@ -252,9 +272,11 @@ pod.row(buttonY)
 
 ############################################# JIJA #############################################
 jija = types.InlineKeyboardMarkup()
+buttonA = types.InlineKeyboardButton('Brusko', callback_data='brusko')
+buttonB = types.InlineKeyboardButton('Boshki', callback_data='boshki')
 buttonY = types.InlineKeyboardButton('<=====Назад', callback_data='exit6')
 
-jija.row(buttonY)
+jija.row(buttonA, buttonB, buttonY)
 ############################################# JIJA #############################################
 
 
@@ -334,12 +356,22 @@ city.row(buttonY)
 
 
 
+
+#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_ MARKUP jija #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_
+###################################### Brusko ################################################
+brusko = types.InlineKeyboardMarkup()
+buttonY = types.InlineKeyboardButton('<=====Назад', callback_data='exit17')
+
+brusko.row(buttonY)
+###################################### Brusko ################################################
+
+
+##################################### Boshki ##############################################
+boshki = types.InlineKeyboardMarkup()
+buttonY = types.InlineKeyboardButton('<=====Назад', callback_data='exit18')
+
+boshki.row(buttonY)
+##################################### Boshki ##############################################
+#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_ MARKUP jija #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_
 ########################################### MARKUP #############################################
 bot.polling (none_stop=True)
-
-updater.start_webhook(listen='0.0.0.0',
-                      port=8443,
-                      url_path='5141853397:AAHeB_9SEf2jGSOzM4cLO0MEvuyApkhq-fo',
-                      key='private.key',
-                      cert='cert.pem',
-                      webhook_url='https://example.com:8443/5141853397:AAHeB_9SEf2jGSOzM4cLO0MEvuyApkhq-fo')
