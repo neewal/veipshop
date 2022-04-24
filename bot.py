@@ -10,20 +10,20 @@ import json
 from telebot import types
 from datetime import datetime
 
+# TIME
 now = datetime.now()
 current_time = now.strftime("%H:%M:%S")
 print("Время старта программы =", current_time)
 
 bot = telebot.TeleBot(config.TOKEN)
 
+#START
 @bot.message_handler(commands=['start'])
 def start12345(message):
 
   bot.send_message(message.chat.id, 'Трендовые вещи с ОТЛИЧНОЙ ЦЕНОЙ здесь.\n🔥ОПТ|РОЗНИЦА🔥\n\n✅Отличное качество всех товаров\n✅Предоставляем лучшие цены\n✅Полная поддержка наших клиентов ( обмен брака) \n✅Оформление и отправка в день заказа', reply_markup=menu)
 
-def qwerty(message):
-    bot.send_message(message.chat.id, 'Трендовые вещи с ОТЛИЧНОЙ ЦЕНОЙ здесь.\n🔥ОПТ|РОЗНИЦА🔥\n\n✅Отличное качество всех товаров\n✅Предоставляем лучшие цены\n✅Полная поддержка наших клиентов ( обмен брака) \n✅Оформление и отправка в день заказа')
-
+#ПЕРЕНАПРОВЛЕНИЕ КНОПОК
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
     try:
@@ -74,18 +74,12 @@ def callback_inline(call):
             elif call.data == 'hqd':
                 bot.send_message(call.message.chat.id, '<b>Вкусы:\n\n🧃Гранатовый сок, смородина, лимон🍋\n🍓Малина, лимон🍋\n🍓Клубника, банан🍌\n🥭Манго🥭\n🥬Жвачка, мята🥬\n🍉Арбуз🍉\n🍈Дыня🍈\n🍓Клубника🍓\n🍉Арбуз, клубника🍓\n🍇Чёрная смородина🍇\n🍏Яблоко, персик🍑\n🍍Ананас🍍\n💨Туманы💨\n🌊Майями🌊\n🍌Банан🍌\n🥭Манго, гуава🍐\n🍇Йогурт, лесные ягоды🍓\n🍊Мультифрукт🍐\n\nПо наличию обращаться: @My_goodness00</b>', reply_markup=hqd, parse_mode="html")
                 print('HQD отправилось!')
-            #elif call.data == 'dormi2':
-                #bot.send_message(call.message.chat.id, 'sjfksdaflsdjflksad;flkajsdfkjasdf;lkjads;flkj;l', reply_markup=dormi2, parse_mode="html")
-                #print('DORMI2 отправилось!')
             elif call.data == 'sky':
                 bot.send_message(call.message.chat.id, 'Пока что нет в наличии:)', reply_markup=sky, parse_mode="html")
                 print('SKY MOON отправилось!')
             elif call.data == 'city':
                 bot.send_message(call.message.chat.id, 'Пока что нет в наличии:)', reply_markup=city, parse_mode="html")
                 print('CITY отправилось!')
-            #elif call.data == 'hqd2':
-                #bot.send_message(call.message.chat.id, 'sjfksdaflsdjflksad;flkajsdfkjasdf;lkjads;flkj;l', reply_markup=hqd2, parse_mode="html")
-                #print('HQD2 отправилось!')
             ############################## ODNORAZKI ####################################
 
 
@@ -205,7 +199,7 @@ def callback_inline(call):
     except Exception as e:
             print(repr(e))
 
-
+#BUTTON
 ############################################## MARKUP #############################################
 ############################################## KATALOG ############################################
 katalog = types.InlineKeyboardMarkup()
@@ -238,15 +232,13 @@ buttonB = types.InlineKeyboardButton('ElfBar Lux', callback_data='elfbar')
 buttonC = types.InlineKeyboardButton('Toomi', callback_data='toomi') 
 buttonD = types.InlineKeyboardButton('Dormi', callback_data='dormi')
 buttonW = types.InlineKeyboardButton('HQD(старая упаковка)', callback_data='hqd')
-#buttonE = types.InlineKeyboardButton('Dormi', callback_data='dormi2')
 buttonR = types.InlineKeyboardButton('SKY MOON', callback_data='sky')
 buttonT = types.InlineKeyboardButton('City', callback_data='city')
-#buttonQ = types.InlineKeyboardButton('HQD(новая упаковка)', callback_data='hqd2')
 buttonY = types.InlineKeyboardButton('<=====Назад', callback_data='exit2')
 
-odnorazki.row(buttonA, buttonB)#, buttonQ
+odnorazki.row(buttonA, buttonB)
 odnorazki.row(buttonC, buttonD, buttonW)
-odnorazki.row(buttonR, buttonT)#buttonE,
+odnorazki.row(buttonR, buttonT)
 odnorazki.row(buttonY)
 ############################################ ODNORAZKI ############################################
 
@@ -356,8 +348,8 @@ city.row(buttonY)
 
 
 
-
 #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_ MARKUP jija #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_
+
 ###################################### Brusko ################################################
 brusko = types.InlineKeyboardMarkup()
 buttonY = types.InlineKeyboardButton('<=====Назад', callback_data='exit17')
@@ -372,6 +364,8 @@ buttonY = types.InlineKeyboardButton('<=====Назад', callback_data='exit18')
 
 boshki.row(buttonY)
 ##################################### Boshki ##############################################
+
 #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_ MARKUP jija #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_
+
 ########################################### MARKUP #############################################
 bot.polling (none_stop=True)
