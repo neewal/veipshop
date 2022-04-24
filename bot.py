@@ -102,7 +102,7 @@ def callback_inline(call):
             elif call.data == 'brusko':
                 bot.send_message(call.message.chat.id, '<b>Вкусы:\n\n-ментол\n-англиская ириска\n-виноградные леденцы\n-творожный десерт с кусочками банана\n-грейпфруктовый сок с ягодами\n-фруктовое драже\n-банановое суфле\n-ванильный табак\n-кокосовый десерт\n-мелисса с мятой\n\nПо наличию обращаться: @My_goodness00</b>', reply_markup=brusko, parse_mode="html")
             elif call.data == 'boshki':
-                bot.send_message(call.message.chat.id, '⚡️Прайс⚡️\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=boshki, parse_mode="html")
+                bot.send_message(call.message.chat.id, 'Пока что нет в наличии:)', reply_markup=boshki, parse_mode="html")
             elif call.data == 'exit6':
                 bot.send_message(call.message.chat.id, '⚡️Прайс⚡️\n\n\nЕсть вопросы по товару, пишите сюда: @My_goodness00', reply_markup=katalog, parse_mode="html")
             ############################## JIJA ######################################
@@ -369,4 +369,4 @@ boshki.row(buttonY)
 
 ########################################### MARKUP #############################################
 if __name__ == '__main__':
-    bot.polling(none_stop=True)
+    bot.polling(none_stop=True) 
