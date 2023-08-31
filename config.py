@@ -1,1 +1,1 @@
-TOKEN = "5141853397:AAHeB_9SEf2jGSOzM4cLO0MEvuyApkhq-fo"
+TOKEN = "токен бота"
