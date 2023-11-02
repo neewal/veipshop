@@ -1,3 +1,3 @@
-cd C:\Users\arcen\Documents\GitHub\veipshop
+cd C:\Users\user\Documents\GitHub\veipshop
 python bot.py
 Pause
